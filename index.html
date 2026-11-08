@@ -105,6 +105,7 @@ button:focus-visible, textarea:focus-visible { outline: 3px solid var(--peacock)
   display: flex; flex-direction: column; gap: 1rem;
 }
 .eyebrow { margin: 0; color: var(--peacock); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; }
+.plays-count { margin: 0 0 0.35rem; color: var(--marigold, #ffb627); font-weight: 700; font-size: 0.95rem; letter-spacing: 0.04em; }
 .eyebrow .dev { letter-spacing: 0; text-transform: none; font-size: 1rem; }
 h1, h2 {
   margin: 0; font-family: var(--display); font-weight: 400; line-height: 1.02;
@@ -180,6 +181,7 @@ h2 { font-size: clamp(1.8rem, 9vw, 2.5rem); }
 
   <section class="overlay" id="menu">
     <div class="panel">
+      <p class="plays-count" id="playsCount" hidden></p>
       <p class="eyebrow"><span class="dev">फुलझड़ी</span> · Phuljhari</p>
       <h1>Sparkler Rhythm</h1>
       <p class="lede">Fireworks burst to the beat and drop Diwali gifts. Slide your basket under each gift to catch it. Red crackers drop too: let them pass, because catching one costs you two drops. Twelve diyas along the bottom light as the song plays.</p>
@@ -588,7 +590,23 @@ h2 { font-size: clamp(1.8rem, 9vw, 2.5rem); }
     livesNum.classList.toggle('low', lives <= 3);
     livesEl.setAttribute('aria-label', lives + ' drops left');
   }
+  // Shared play counter (served by /api/plays on the Vercel site; stays hidden elsewhere).
+  const elPlays = document.getElementById('playsCount');
+  function showPlays(n) {
+    if (typeof n !== 'number' || !isFinite(n)) return;
+    elPlays.textContent = '\u{1FA94} ' + n.toLocaleString() + (n === 1 ? ' sparkler lit' : ' sparklers lit') + ' so far';
+    elPlays.hidden = false;
+  }
+  function countPlay(method) {
+    try {
+      fetch('/api/plays', { method, cache: 'no-store' })
+        .then(r => r.ok ? r.json() : null).then(d => { if (d) showPlays(d.plays); }).catch(() => {});
+    } catch (e) {}
+  }
+  countPlay('GET');
+
   async function startGame() {
+    countPlay('POST');
     initAudio();
     audioClock = false;
     if (ac) {
