@@ -754,7 +754,10 @@ h2 { font-size: clamp(1.8rem, 9vw, 2.5rem); }
   }
 
   /* ---------- sharing: message, card, challenge link ---------- */
-  const SHARE_URL = 'https://claude.ai/artifact/PibrTt9toPQ4399XCFsQER';
+  const SHARE_FALLBACK = 'https://claude.ai/artifact/PibrTt9toPQ4399XCFsQER';
+  // Share the address the game is actually running on; fall back to the original link when opened as a file or preview.
+  const SHARE_URL = /^https?:$/.test(location.protocol) && !/claude\.ai|claudeusercontent/.test(location.hostname)
+    ? location.origin + location.pathname : SHARE_FALLBACK;
   function buildMessage() {
     const m = MODES[modeIdx], s = lastShare, pick = (a) => a[(Math.random() * a.length) | 0];
     const link = SHARE_URL + '#beat-' + modeIdx + '-' + score;
