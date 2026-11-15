@@ -7,7 +7,7 @@
 <title>Sparkler Rhythm</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="copyright" content="© 2026 AP">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2320103b'/%3E%3Cg fill='none' stroke-linecap='round' stroke-width='4'%3E%3Cpath stroke='%23ffb627' d='M32 7v14M32 43v14M7 32h14M43 32h14'/%3E%3Cpath stroke='%23ff3d8b' d='M14.3 14.3l10 10M49.7 14.3l-10 10M14.3 49.7l10-10M49.7 49.7l-10-10'/%3E%3C/g%3E%3Ccircle cx='32' cy='32' r='5' fill='%23ffd86b'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 240 240%22%3E%3Cg%3E%3Cpath d=%22M40 8H196Q232 8 232 44V200Q232 232 196 232H44Q8 232 8 196V40Q8 8 40 8Z%22 fill=%22%2320103b%22 stroke=%22%23ffb627%22 stroke-width=%229%22/%3E%3Cg fill=%22none%22 stroke=%22%23ffb627%22 stroke-width=%2219%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22M44 160L82 80L120 160%22/%3E%3Cpath d=%22M58 134H106%22/%3E%3Cpath d=%22M142 160V80H164a27 27 0 0 1 0 54H142%22/%3E%3C/g%3E%3Cpath d=%22M82 40C69 54 71 66 82 70C93 66 95 54 82 40Z%22 fill=%22%23ff3d8b%22/%3E%3Cpath d=%22M82 50C76 58 77 65 82 67C87 65 88 58 82 50Z%22 fill=%22%23ffd35c%22/%3E%3Cpath d=%22M48 182H192Q184 220 120 222Q56 220 48 182Z%22 fill=%22%23ffb627%22/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;700&family=Yatra+One&display=swap">
@@ -139,6 +139,7 @@ h2 { font-size: clamp(1.8rem, 9vw, 2.5rem); }
 }
 .sound-toggle { align-self: flex-start; padding: 0.4rem 0.8rem; font-size: 0.9rem; }
 .copyright { margin: 0; font-size: 0.78rem; color: var(--muted); text-align: center; }
+.apmark { width: 2em; height: 2em; vertical-align: -0.7em; margin-left: 0.15em; }
 
 /* Results */
 .rating { display: flex; gap: 0.4rem; justify-content: center; }
@@ -190,7 +191,7 @@ h2 { font-size: clamp(1.8rem, 9vw, 2.5rem); }
       <button class="cta" id="play" type="button">Light the sparkler</button>
       <p class="fine">Drag left and right to move the basket, or use the arrow keys. You can drop ten gifts. The tenth drop ends the game, and the diya up top counts how many you have left. Letting a cracker pass earns a small bonus.</p>
       <button class="ghost sound-toggle" id="soundToggle" type="button" aria-pressed="true">Sound: on</button>
-      <p class="copyright">© 2026 AP</p>
+      <p class="copyright">© 2026 <svg viewBox="0 0 240 240" class="apmark" role="img" aria-label="AP"><g><path d="M40 8H196Q232 8 232 44V200Q232 232 196 232H44Q8 232 8 196V40Q8 8 40 8Z" fill="#20103b" stroke="#ffb627" stroke-width="9"/><g fill="none" stroke="#ffb627" stroke-width="19" stroke-linecap="round" stroke-linejoin="round"><path d="M44 160L82 80L120 160"/><path d="M58 134H106"/><path d="M142 160V80H164a27 27 0 0 1 0 54H142"/></g><path d="M82 40C69 54 71 66 82 70C93 66 95 54 82 40Z" fill="#ff3d8b"/><path d="M82 50C76 58 77 65 82 67C87 65 88 58 82 50Z" fill="#ffd35c"/><path d="M48 182H192Q184 220 120 222Q56 220 48 182Z" fill="#ffb627"/></g></svg></p>
     </div>
   </section>
 
@@ -215,7 +216,7 @@ h2 { font-size: clamp(1.8rem, 9vw, 2.5rem); }
         <button class="ghost" id="copy" type="button">Dare a friend</button>
         <button class="ghost" id="back" type="button">Start screen</button>
       </div>
-      <p class="copyright">© 2026 AP</p>
+      <p class="copyright">© 2026 <svg viewBox="0 0 240 240" class="apmark" role="img" aria-label="AP"><g><path d="M40 8H196Q232 8 232 44V200Q232 232 196 232H44Q8 232 8 196V40Q8 8 40 8Z" fill="#20103b" stroke="#ffb627" stroke-width="9"/><g fill="none" stroke="#ffb627" stroke-width="19" stroke-linecap="round" stroke-linejoin="round"><path d="M44 160L82 80L120 160"/><path d="M58 134H106"/><path d="M142 160V80H164a27 27 0 0 1 0 54H142"/></g><path d="M82 40C69 54 71 66 82 70C93 66 95 54 82 40Z" fill="#ff3d8b"/><path d="M82 50C76 58 77 65 82 67C87 65 88 58 82 50Z" fill="#ffd35c"/><path d="M48 182H192Q184 220 120 222Q56 220 48 182Z" fill="#ffb627"/></g></svg></p>
     </div>
   </section>
 
@@ -230,7 +231,7 @@ h2 { font-size: clamp(1.8rem, 9vw, 2.5rem); }
         <button class="cta" id="copyMsg" type="button">Copy message</button>
         <button class="ghost" id="shareBack" type="button">Back to results</button>
       </div>
-      <p class="copyright">© 2026 AP</p>
+      <p class="copyright">© 2026 <svg viewBox="0 0 240 240" class="apmark" role="img" aria-label="AP"><g><path d="M40 8H196Q232 8 232 44V200Q232 232 196 232H44Q8 232 8 196V40Q8 8 40 8Z" fill="#20103b" stroke="#ffb627" stroke-width="9"/><g fill="none" stroke="#ffb627" stroke-width="19" stroke-linecap="round" stroke-linejoin="round"><path d="M44 160L82 80L120 160"/><path d="M58 134H106"/><path d="M142 160V80H164a27 27 0 0 1 0 54H142"/></g><path d="M82 40C69 54 71 66 82 70C93 66 95 54 82 40Z" fill="#ff3d8b"/><path d="M82 50C76 58 77 65 82 67C87 65 88 58 82 50Z" fill="#ffd35c"/><path d="M48 182H192Q184 220 120 222Q56 220 48 182Z" fill="#ffb627"/></g></svg></p>
     </div>
   </section>
 </div>
@@ -789,6 +790,8 @@ h2 { font-size: clamp(1.8rem, 9vw, 2.5rem); }
       c.fillStyle = '#ffd86b'; c.beginPath(); c.ellipse(x, y - s, s * 0.38, s * 0.95, 0, 0, TAU); c.fill();
     }
   }
+  const AP_BADGE = new Image();
+  AP_BADGE.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240"><g><path d="M40 8H196Q232 8 232 44V200Q232 232 196 232H44Q8 232 8 196V40Q8 8 40 8Z" fill="#20103b" stroke="#ffb627" stroke-width="9"/><g fill="none" stroke="#ffb627" stroke-width="19" stroke-linecap="round" stroke-linejoin="round"><path d="M44 160L82 80L120 160"/><path d="M58 134H106"/><path d="M142 160V80H164a27 27 0 0 1 0 54H142"/></g><path d="M82 40C69 54 71 66 82 70C93 66 95 54 82 40Z" fill="#ff3d8b"/><path d="M82 50C76 58 77 65 82 67C87 65 88 58 82 50Z" fill="#ffd35c"/><path d="M48 182H192Q184 220 120 222Q56 220 48 182Z" fill="#ffb627"/></g></svg>');
   function renderCard() {
     const img = $('cardImg'), W = 1080, H = 1350, m = MODES[modeIdx], s = lastShare;
     const draw = () => {
@@ -849,7 +852,9 @@ h2 { font-size: clamp(1.8rem, 9vw, 2.5rem); }
         for (let i = 0; i < 4; i++) { hw *= 0.8; g.fillRect(tx - hw, yy - 30, hw * 2, 30); yy -= 30; }
         g.beginPath(); g.arc(tx, yy, hw * 0.9, Math.PI, 0); g.fill();
         g.fillStyle = '#b9a8d2'; g.font = '600 24px ' + BODY;
-        g.fillText('© 2026 AP', W / 2, H - 22);
+        const lbl = '© 2026 ', tw = g.measureText(lbl).width, bs = 46, x0 = W / 2 - (tw + bs) / 2, sa = g.textAlign;
+        g.textAlign = 'left'; g.fillText(lbl, x0, H - 22); g.textAlign = sa;
+        if (AP_BADGE.complete && AP_BADGE.naturalWidth) g.drawImage(AP_BADGE, x0 + tw, H - 22 - 34, bs, bs);
         img.src = c.toDataURL('image/png');
       } catch (e) { img.removeAttribute('src'); }
     };
